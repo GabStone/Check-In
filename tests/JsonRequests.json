@@ -1,0 +1,24 @@
+{
+  "request":{
+    "accountCreation":{
+      "user":{
+        "firstName":"Gaber",
+        "lastName":"Stoner",
+        "email":"gabriel.stone@msn.com",
+        "password":"123456",
+        "username":"adminroot"
+      },
+      "program":{
+        "title":"Software Eng",
+        "description":"best program ever",
+        "type":"bachelor of Eng",
+        "duration":"4"
+      }
+    },
+    "find":{
+      "user":{
+        "username":"adminroot"
+      }
+    }
+  }
+}
