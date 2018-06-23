@@ -6,14 +6,14 @@ var Program = mongoose.model('Program');
 var upload = multer(); // for parsing multipart/form-data
 var router = require('express').Router();
 var async = require("async");
-var logger = require('winston');
+var logger = require('../../log/logger');
 
 /**
  * register API
  * Creates a User model and saves it to the database
  */
 router.post('/user', async (req, res) => {
-    logger.info("Registration Api");
+    logger.info("Registration Api (Attempt)");
 
     var user = new User();
     user.firstName = req.body.user.firstName;
