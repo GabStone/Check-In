@@ -4,6 +4,7 @@ var upload = multer();
 var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 const express = require('express');
+var passport = require('passport');
 
 const app = express();
 
@@ -12,6 +13,7 @@ require('./models/User');
 require('./models/Program');
 require('./models/Location');
 require('./models/Faculty');
+require('./config/passport');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

@@ -20,5 +20,6 @@
         "username":"adminroot"
       }
     }
-  }
+  },
+  "findByUsername": "db.users.findOne{'username': 'root'}"
 }
