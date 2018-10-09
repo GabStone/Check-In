@@ -19,7 +19,7 @@ var UserSchema = new mongoose.Schema({
     hash: String,
     salt: String,
     program: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Program' }],
-    location: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Location' }]
+    location: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Location', index: true}]
 });
 
 UserSchema.plugin(uniqueValidator, {message: 'is already taken.'});
@@ -33,9 +33,7 @@ UserSchema.methods.toJSONAuth = function (){
         firstName: this.firstName,
         lastName: this.lastName,
         email: this.email,
-        status: this.status,
-        program: this.program.title,
-        location: this.location.name
+        status: this.status
     };
 };
 
@@ -45,9 +43,7 @@ UserSchema.methods.toJSONInfo = function (){
         firstName: this.firstName,
         lastName: this.lastName,
         email: this.email,
-        status: this.status,
-        program: this.program.title,
-        location: this.location.name
+        status: this.status
     };
 };
 

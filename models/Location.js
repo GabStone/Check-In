@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var uniqueValidator = require('mongoose-unique-validator');
 
 /**
  * Location Schema
@@ -7,11 +8,13 @@ var mongoose = require('mongoose');
 
 // Params
 var LocationSchema = new mongoose.Schema({
-    name: String,
+    name: {type: String, unique: true, required: [true, "can't be blank"], index: true},
     description: String,
     address: String,
     image: String
 });
+
+LocationSchema.plugin(uniqueValidator, {message: 'is already taken.'});
 
 // Methods
 

@@ -21,5 +21,9 @@
       }
     }
   },
-  "findByUsername": "db.users.findOne{'username': 'root'}"
+  "findByUsername": "db.users.findOne{'username': 'root'}",
+  "checkIn": { "user":{"username":"gstone"},
+    "location": {"name": "site"},
+    "status": "studying for eng final :("
+  }
 }
